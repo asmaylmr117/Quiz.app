@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <!-- تضمين Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('mo.quiz.jpg');
+        }
+        h1 {
+            background: linear-gradient(90deg, #00ffff, #ff004c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            top: -20px;
+        }
+        .custom-input {
+            padding: 10px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            border: 1px solid #bd0707da;
+            width: 450px;
+            text-align: center;
+        }
+        .custom-button {
+            background-color: rgba(30, 236, 236, 0.726);
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            width: 150px;
+        }
+        .custom-button:hover {
+            background-color: #00ffff;
+        }
+        .logo {
+            width: 200px;
+            position: relative;
+            right: -1000px;
+            bottom: -220px;
+        }
+    </style>
+    <script>
+        function validateInput() {
+            var inputElement = document.getElementById("nameInput");
+            var input = inputElement.value.trim();
+
+            if (input === "") {
+                alert("Please enter your name");
+                return;
+            }
+
+            if (input === "Mostafa*1234") {
+                window.location.href = "contact.html";
+            } else {
+                window.location.href = "services.html";
+            }
+        }
+    </script>
+</head>
+<body class="flex flex-col items-center justify-start min-h-screen m-0">
+
+    <div class="container text-center">
+        <h1 class="text-4xl mt-8">Welcome, good luck</h1>
+        <div class="mt-3">
+            <input type="text" id="nameInput" class="custom-input mx-auto mt-4 block" placeholder="Enter your name">
+        </div>
+        <div class="mt-3">
+            <button class="custom-button mt-4" onclick="validateInput()">Login</button>
+        </div>
+        <img src="mostafa.PNG" alt="logo" class="logo">
+    </div>
+
+</body>
+</html>
